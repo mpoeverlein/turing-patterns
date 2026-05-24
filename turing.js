@@ -34,8 +34,10 @@ class DiffusionSolver {
         // Method 1: Completely random distribution (0 to 1)
         for (let i = 0; i < this.nx; i++) {
             for (let j = 0; j < this.ny; j++) {
-                this.P[i][j] = rand();
-                this.S[i][j] = rand();
+                // this.P[i][j] = rand();
+                // this.S[i][j] = rand();                
+                this.P[i][j] = Math.random();
+                this.S[i][j] = Math.random();
             }
         }
         
@@ -304,8 +306,8 @@ class DiffusionVisualizer {
 
 // Main application initialization
 document.addEventListener('DOMContentLoaded', () => {
-    const nx = 50;
-    const ny = 50;
+    const nx = 128;
+    const ny = 128;
     const DP = document.getElementById('PdiffusionCoeff').value;
     const DS = document.getElementById('SdiffusionCoeff').value;
     const k = document.getElementById('kcoupling').value;
